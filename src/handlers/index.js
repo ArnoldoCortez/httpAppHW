@@ -92,9 +92,7 @@ const fileViewer = (request, response) => {
     response.write(file);
     response.end();
   } catch (err) {
-    response.writeHead(404, { 'Content-Type': 'text/plain' });
-    response.write(err.message);
-    response.end();
+    notFound(request, response);
   }
 };
 
